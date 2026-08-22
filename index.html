@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f4000b">
     <title>MARGINAL 102.1 FM</title>
 
@@ -36,7 +36,6 @@
             width: 100%;
             height: 100%;
             z-index: 1;
-            overflow: hidden;
         }
 
         .fs-vid-background video {
@@ -47,10 +46,15 @@
 
         #player-wrapper {
             position: relative;
-            z-index: 999;
-            width: 95%;
-            max-width: 500px;
-            margin: auto;
+            z-index: 9999;
+            width: 100%;
+            max-width: 480px;
+            padding: 10px;
+        }
+
+        #player {
+            width: 100% !important;
+            min-height: 200px;
         }
 
         footer {
@@ -58,7 +62,7 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
+            z-index: 10000;
             background-color: #222;
             color: #fff;
             text-align: center;
@@ -85,10 +89,8 @@
     </div>
 
     <script>
-        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
         $("#player").lunaradio({
-            userinterface: isMobile ? "small" : "big",
+            userinterface: "big",
             backgroundcolor: "transparent!",
             fontcolor: "#ffffff",
             hightlightcolor: "#000000",
@@ -103,11 +105,11 @@
             usevisualizer: "real",
             visualizertype: "8",
             itunestoken: "1000lIPN",
-            metadatatechnic: "fallback",
+            metadatatechnic: "directly",
             corsproxy: "",
             usestreamcorsproxy: "false",
             streamurl: "https://stream.zeno.fm/esukq068guhvv",
-            streamtype: "zeno",
+            streamtype: "icecast2",
             idzeno: "esukq068guhvv",
             icecastmountpoint: "/radio.mp3",
             shoutcastpath: "",
@@ -115,7 +117,7 @@
             metadatainterval: "26000",
             volume: "100",
             debug: "false",
-            autoplay: "false",
+            autoplay: "true",
             displayliveicon: "true",
             visualizeropacity: "1.0",
             multicolorvisualizer: "true",
